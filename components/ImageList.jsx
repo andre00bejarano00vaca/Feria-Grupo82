@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import Card from './Card';
 
 const ImageList = () => {
@@ -25,22 +25,24 @@ const ImageList = () => {
     fetchImages();
   }, []);
 
-  if (loading) {
-    return <p>Loading...</p>;
-  }
+  // if (loading) {
+  //   return <p>Loading...</p>;
+  // }
 
-  if (images.length === 0) {
-    return <p>No images found.</p>; // Mensaje si no hay imágenes
-  }
+  // if (images.length === 0) {
+  //   return <p>No images found.</p>; // Mensaje si no hay imágenes
+  // }
 
   return (
     <div>
       <ul className="grid grid-cols-3">
+        <Suspense fallback={<div>cargando...</div>}>
         {images.map((image) => (
           <li key={image.id}>
             <Card image = {image}/>
           </li>
         ))}
+        </Suspense>
       </ul>
     </div>
   );

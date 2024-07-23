@@ -1,4 +1,4 @@
-import UploadImage from "@/components/Uploadimage"
+import UploadImage from "@/components/UploadImage"
 
 
 const page = () => {
