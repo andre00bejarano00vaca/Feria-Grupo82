@@ -9,7 +9,7 @@ const ImageList = () => {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const response = await fetch('http://ccpa7stkruda3o.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com/api/images');
+        const response = await fetch('https://ccpa7stkruda3o.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com/api/images');
         if (!response.ok) {
           throw new Error('Failed to fetch images');
         }
