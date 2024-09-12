@@ -9,7 +9,7 @@ const ImageList = () => {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const response = await fetch('https://backendferia-a7ade212ed25.herokuapp.com//api/images');
+        const response = await fetch('https://backendferia-a7ade212ed25.herokuapp.com/api/images');
         if (!response.ok) {
           throw new Error('Failed to fetch images');
         }
