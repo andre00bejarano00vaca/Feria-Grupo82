@@ -38,7 +38,7 @@ export default function UploadImage() {
     formData.append("tipo", tipo);
 
     try {
-      const response = await fetch("https://ccpa7stkruda3o.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com/api/images/upload", {
+      const response = await fetch("https://backendferia-a7ade212ed25.herokuapp.com/api/images/upload", {
         method: "POST",
         body: formData,
       });
