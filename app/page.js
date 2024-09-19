@@ -1,4 +1,4 @@
-import Card from "@/components/Card";
+import Card from "@/components/CardImg";
 import PaginaPrincipal from "@/components/PaginaPrincipal";
 
 export default function Home() {

@@ -1,7 +1,6 @@
 "use client"
 import { Suspense, useEffect, useState } from 'react';
-import CardImg from './Card';
-import CardUi from './CardUi';
+import CardImg from './CardImg';
 
 const ImageList = () => {
   const [images, setImages] = useState([]);
