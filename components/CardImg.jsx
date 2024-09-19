@@ -10,16 +10,12 @@ const CardImg = ({ image }) => {
         <h4 className="font-bold text-large">{image.precio}</h4>
       </CardHeader>
       <CardBody className="overflow-visible py-2">
-      <div className="relative w-full h-[200px]">
-          <Image
-            alt={`${image.nombre}`}
-            className="object-cover rounded-xl"
-            src={`data:image/jpeg;base64,${image.data}`}
-            layout="fill" // Esto asegura que la imagen se ajuste al contenedor
-            objectFit="cover" // Mantiene la relación de aspecto sin distorsionarse
-          />
-        </div>
-
+        <Image
+          alt={`${image.nombre}`}
+          className="object-cover rounded-xl"
+          src={`data:image/jpeg;base64,${image.data}`}
+          width={270}
+        />
       </CardBody>
     </Card>
   );
