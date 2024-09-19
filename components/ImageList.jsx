@@ -1,6 +1,7 @@
 "use client"
 import { Suspense, useEffect, useState } from 'react';
-import Card from './Card';
+import CardImg from './Card';
+import CardUi from './CardUi';
 
 const ImageList = () => {
   const [images, setImages] = useState([]);
@@ -35,11 +36,11 @@ const ImageList = () => {
 
   return (
     <div>
-      <ul className="grid grid-cols-3">
+      <ul className="flex flex-wrap gap-4 justify-center p-4">
         <Suspense fallback={<div>cargando...</div>}>
         {images.map((image) => (
           <li key={image.id}>
-            <Card image = {image}/>
+            <CardImg image = {image}/>
           </li>
         ))}
         </Suspense>

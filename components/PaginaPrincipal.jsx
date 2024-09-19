@@ -12,9 +12,9 @@ const PaginaPrincipal = () => {
         <DosContenedores/>       
         <div className=" bg-gray-200 ">
           <p className="text-center text-[27px] p-4">Productos</p>
-          <section >
+          <div >
             <ImageList/>
-          </section>
+          </div>
         </div>
         <Footer/>
       </div>

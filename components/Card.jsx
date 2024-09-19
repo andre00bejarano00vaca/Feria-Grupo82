@@ -1,20 +1,23 @@
 import React from "react";
 
-const Card = ({image}) => {
+const CardImg = ({ image }) => {
   return (
-    <div className="border  w-[290px] h-[350px] m-4 rounded-[15PX] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)]">
-      <div className="border  h-3/4">
-      <img src={`data:image/jpeg;base64,${image.data}`} alt={image.name} className="w-full h-full object-cover" />
-      </div>
-      <div className="border  h-1/4 grid grid-cols-12 p-4">
-        <p className="col-span-6 row-span-2">{image.name}</p>
-        <p className="col-span-6 row-span-2">{image.precio}</p>
-        <p className="col-span-12 truncate ">
-          Tipo:{image.tipo}
-        </p>
-      </div>
-    </div>
+    <Card className="py-4 w-[18rem] bg-gray-400">
+      <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+        <p className="text-tiny uppercase font-bold">{image.name}</p>
+        <small className="text-default-500">{image.tipo}</small>
+        <h4 className="font-bold text-large">{image.precio}</h4>
+      </CardHeader>
+      <CardBody className="overflow-visible py-2">
+        <Image
+          alt="Card background"
+          className="object-cover rounded-xl"
+          src={`data:image/jpeg;base64,${image.data}`}
+          width={270}
+        />
+      </CardBody>
+    </Card>
   );
 };
 
-export default Card;
+export default CardImg;

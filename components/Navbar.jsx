@@ -1,21 +1,51 @@
-import Link from 'next/link'
+"use client"
+import React from "react";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button } from "@nextui-org/react";
 
-const Navbar = () => {
+const NavbarLayout = () => {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
+  const menuItems = ["Home", "About", "Profile"];
+
   return (
-    <div className=" backdrop-blur-[3px] h-20 w-full border-b-2 flex items-center justify-between p-2">
-      <ul className="flex">
-        <li className="p-2 cusor-pointerm text-white">
-           <Link href="/" className='text-stroke-3'>Home</Link> 
-        </li>
-        <li className="p-2 cusor-pointerm text-white">
-          <Link href="/about" className='text-stroke-3'>about</Link>
-        </li>
-        <li className="p-2 cusor-pointerm text-white">
-          <Link href="/profile" className='text-stroke-3'>Profile</Link>
-        </li>
-      </ul>
-    </div>
+    <Navbar onMenuOpenChange={setIsMenuOpen}>
+      <NavbarContent>
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className="sm:hidden"
+        />
+        <NavbarBrand>
+          <p className="font-bold text-inherit">Neuromoda</p>
+        </NavbarBrand>
+      </NavbarContent>
+
+      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+        <NavbarItem>
+          <Link color="foreground" href="/">Home</Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link color="foreground" href="/about">About</Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link color="foreground" href="/profile">Profile</Link>
+        </NavbarItem>
+      </NavbarContent>
+
+      <NavbarMenu>
+        {menuItems.map((item, index) => (
+          <NavbarMenuItem key={`${item}-${index}`}>
+            <Link
+              className="w-full"
+              href={index === 0 ? "/" : index === 1 ? "/about" : "/profile"}
+              size="lg"
+            >
+              {item}
+            </Link>
+          </NavbarMenuItem>
+        ))}
+      </NavbarMenu>
+    </Navbar>
   )
 }
 
-export default Navbar
+export default NavbarLayout
